@@ -1,0 +1,25 @@
+<div class="login">
+  <div class="login__inner">
+    <form [formGroup]="loginForm" action="" class="login__form">
+      <h1 class="title">Authorization</h1>
+      <div class="inputs">
+        <div [ngClass]="{'field-error': isFieldInvalid('username')}" class="login__input">
+          <label class="label" for="login">Login</label>
+          <input class="input" formControlName='username' id="login" placeholder="Enter your login"
+                 type="text">
+          <p *ngIf="isFieldInvalid('username')" class="error">The minimum field length is 4 characters</p>
+        </div>
+        <div [ngClass]="{'field-error': isFieldInvalid('password')}" class="login__input">
+          <label class="label" for="password">Password</label>
+          <input class="input" formControlName='password' id="password" placeholder="Enter your password"
+                 type="password">
+          <p *ngIf="isFieldInvalid('password')" class="error">The minimum field length is 4 characters </p>
+        </div>
+      </div>
+      <button (click)="login()" [disabled]="loginForm.invalid || inProgress"
+              class="login__btn"
+              type="submit">Login
+      </button>
+    </form>
+  </div>
+</div>

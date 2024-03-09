@@ -1,0 +1,29 @@
+<div class="task">
+  <p *ngIf="!isEdit; else input" [ngClass]="{'complete': task.completed}" class="title">
+    {{task.todo}}
+  </p>
+  <ng-template #input>
+    <input [(ngModel)]="task.todo" class="title" type="text">
+  </ng-template>
+  <div class="actions">
+    <p (click)="isEdit = true" *ngIf="!isEdit; else save" class="edit">
+      <img alt="" draggable="false" src="assets/img/icons/pencil.svg">
+    </p>
+    <ng-template #save>
+      <p (click)="changeTitleTask()" class="edit">
+        <img alt="" draggable="false" src="assets/img/icons/pencil.svg">
+      </p>
+    </ng-template>
+    <p (click)="changeStatus()" *ngIf="!task.completed; else cancel" class="completed">
+      <img alt="" draggable="false" src="assets/img/icons/check.svg">
+    </p>
+    <ng-template #cancel>
+      <p (click)="changeStatus()" class="completed">
+        <img alt="" draggable="false" src="assets/img/icons/cancel.svg">
+      </p>
+    </ng-template>
+    <p (click)="deleteTask()" class="delete">
+      <img alt="" draggable="false" src="assets/img/icons/delete.svg">
+    </p>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+@import "src/styles/variables.scss";
+
+.panel {
+  height: 100vh;
+  background-color: $light-blue;
+  padding: 52px 54px;
+  width: 370px;
+  position: fixed;
+  @media (max-width: 770px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+  }
+}
+
+.title {
+  font-family: 'Inter ExtraBold';
+  font-size: 48px;
+  color: #000;
+  margin-bottom: 40px;
+  @media (max-width: 770px) {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 35px;
+  }
+}

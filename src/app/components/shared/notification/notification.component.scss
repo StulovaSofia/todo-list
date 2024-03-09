@@ -1,0 +1,53 @@
+:host {
+  display: flex;
+  position: fixed;
+  min-width: 402px;
+  max-width: 602px;
+  height: 52px;
+  right: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  box-shadow: 0px 0px 10px rgba(10, 13, 31, 0.06);
+  @media (max-width: 670px) {
+    min-width: auto;
+    max-width: 90%;
+    right: 18px;
+    left: 18px;
+  }
+}
+
+.notification__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+
+  padding-right: 22px;
+  padding-left: 28px;
+  background-position: left 17px center;
+  background-repeat: no-repeat;
+}
+
+.notification__text {
+  width: 100%;
+  font-family: "Inter SemiBold";
+  font-size: 14px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+
+.notification__close {
+  width: 10px;
+  height: 10px;
+  content: "";
+  background-image: url("../../../../assets/img/icons/close.svg");
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.notification__error {
+  background-color: #ff0000;
+}

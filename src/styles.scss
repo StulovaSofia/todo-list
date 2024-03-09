@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./styles/cleanup";
+@use "./styles/fonts";
+@use "./styles/variables";
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 10px;
+}

@@ -1,0 +1,19 @@
+<div class="tasks">
+  <h1 class="title">Tasks</h1>
+  <div *ngIf="isLoaded; else loader" class="tasks__inner">
+    <ol class="task-list">
+      <li *ngFor="let task of tasks">
+        <app-task-item [task]="task"></app-task-item>
+      </li>
+    </ol>
+  </div>
+
+  <ng-template #loader>
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </ng-template>
+</div>

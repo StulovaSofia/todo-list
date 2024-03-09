@@ -1,0 +1,42 @@
+<div class="actions">
+  <div class="actions__inner">
+    <div class="mode">
+      <h2 class="title">
+        Mode:
+      </h2>
+      <div class="buttons">
+        <button (click)="setOffline(true)" class="btn btn-primary">
+          <img *ngIf="this.proxyService.offline; else offlineOff" alt="" draggable="false"
+               src="assets/img/icons/offline-on.svg">
+          <ng-template #offlineOff>
+            <img alt="" draggable="false" src="assets/img/icons/offline-off.svg">
+          </ng-template>
+        </button>
+        <button (click)="setOffline(false)" class="btn btn-primary">
+          <span class=""></span>
+          <img *ngIf="!this.proxyService.offline; else onlineOff" alt="" draggable="false"
+               src="assets/img/icons/online-on.svg">
+          <ng-template #onlineOff>
+            <img alt="" draggable="false" src="assets/img/icons/online-off.svg">
+          </ng-template>
+        </button>
+      </div>
+    </div>
+    <div class="sort">
+      <h2 class="title">
+        Sort:
+      </h2>
+      <div class="buttons">
+        <button (click)="sortingById()" class="btn btn-primary">
+          <img alt="" draggable="false" src="assets/img/icons/sort-numeric-descending.svg">
+        </button>
+        <button (click)="sortingByCompleted()" class="btn btn-primary">
+          <img alt="" draggable="false" src="assets/img/icons/sort-numeric-ascending.svg">
+        </button>
+      </div>
+    </div>
+  </div>
+  <button (click)="logOut()" class="logout">
+    <p> Log out</p>
+  </button>
+</div>

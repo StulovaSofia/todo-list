@@ -1,0 +1,158 @@
+:host {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  @media (max-width: 470px) {
+    background-color: #ecfefb;
+  }
+}
+
+.login {
+  max-width: 430px;
+  margin: 0 auto;
+  font-family: 'Inter Regular';
+  @media (max-width: 470px) {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+.login__inner {
+  padding: 48px;
+  background-color: #ecfefb;
+  border-radius: 16px;
+  @media (max-width: 470px) {
+    padding: 25px;
+  }
+}
+
+.title {
+  font-family: 'Inter ExtraBold';
+  text-align: center;
+  font-size: 48px;
+  @media (max-width: 470px) {
+    font-size: 30px;
+  }
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  @media (max-width: 470px) {
+    gap: 28px;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+.login__input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 18px;
+  @media (max-width: 470px) {
+    font-size: 15px;
+  }
+}
+
+.input {
+  border: 1px solid #848484;
+  border-radius: 8px;
+  padding: 11px 11px 11px 37px;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #848484;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid #3feecf;
+}
+
+.login__btn {
+  font-size: 18px;
+  padding: 21px 0;
+  width: 100%;
+  background-color: #3feecf;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  @media (max-width: 470px) {
+    font-size: 16px;
+    padding: 14px 0;
+  }
+}
+
+.login__btn:hover {
+  background-color: #13DDB8;
+}
+
+button:disabled {
+  background-color: #8FB1C1;
+  cursor: auto;
+}
+
+button:disabled:hover {
+  background-color: #8FB1C1;
+}
+
+.login__input {
+  position: relative;
+}
+
+.login__input:before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 33px;
+  left: 11px;
+  @media (max-width: 470px) {
+    top: 30px;
+  }
+}
+
+.login__input:nth-child(1):before {
+  background-image: url("../../../assets/img/icons/account.svg");
+}
+
+.login__input:nth-child(2):before {
+  background-image: url("../../../assets/img/icons/lock.svg");
+}
+
+.error {
+  position: absolute;
+  color: #F20C1A;
+  font-family: 'Inter Regular';
+  font-size: 12px;
+  line-height: 12px;
+  bottom: -15px;
+}
+
+.field-error {
+  position: relative;
+
+  & input {
+    border-color: #F22D2D;
+    color: #F22D2D;
+
+    &::placeholder {
+      color: #F22D2D;
+    }
+  }
+
+  & label {
+    color: #F22D2D;
+  }
+}

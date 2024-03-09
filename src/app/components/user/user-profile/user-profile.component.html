@@ -1,0 +1,17 @@
+<div class="profile">
+  <h3 class="title">User</h3>
+  <div *ngIf="isUserLoaded; else loader" class="info">
+    <img alt="" class="avatar" draggable="false" src="{{user.image}}">
+    <p class="name">{{user.firstName}} {{user.lastName}}</p>
+  </div>
+  <ng-template #loader>
+    <div class="loader">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </ng-template>
+</div>

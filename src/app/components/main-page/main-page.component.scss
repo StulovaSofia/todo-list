@@ -1,0 +1,9 @@
+
+.main {
+  display: flex;
+  gap: 70px;
+  @media (max-width: 770px) {
+    flex-direction: column;
+    gap: 0;
+  }
+}

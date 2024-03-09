@@ -1,0 +1,7 @@
+<form [formGroup]="taskForm" action="" class="form">
+  <input class="input" formControlName="todo" type="text">
+  <button (click)="addTask()" [disabled]="taskForm.invalid || inProgress"
+          class="btn"
+          type="submit">Add task
+  </button>
+</form>
