@@ -2,7 +2,7 @@
   <h1 class="title">Tasks</h1>
   <div *ngIf="isLoaded; else loader" class="tasks__inner">
     <ol class="task-list">
-      <li *ngFor="let task of tasks">
+      <li *ngFor="let task of tasks" [@taskListAnimation]>
         <app-task-item [task]="task"></app-task-item>
       </li>
     </ol>

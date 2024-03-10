@@ -1,5 +1,12 @@
 @import "src/styles/variables";
 
+.actions {
+  padding-bottom: 40px;
+  @media (max-width: 770px) {
+    padding-bottom: 10px;
+  }
+}
+
 .actions__inner {
   display: flex;
   align-items: center;
@@ -44,7 +51,7 @@ button {
 }
 
 .logout {
-  margin-top: 95px;
+  margin-top: 20px;
   font-family: 'Inter SemiBold';
   font-size: 18px;
   color: $black;
