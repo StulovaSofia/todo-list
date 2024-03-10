@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {ITask, ITasks} from "../interfaces/task";
-import {finalize} from "rxjs";
-import {NotificationService} from "./notification.service";
-import {ProxyService} from "./proxy.service";
+import {ITask, ITasks} from '../interfaces/task';
+import {finalize} from 'rxjs';
+import {NotificationService} from './notification.service';
+import {ProxyService} from './proxy.service';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,7 @@ export class TaskService {
           this.inProgress = false;
         }),
       ).subscribe(
-      (data: any) => {
+      (data: ITask) => {
         this.tasks.todos.push(data);
       },
       () => {
@@ -44,7 +44,7 @@ export class TaskService {
           this.isLoaded = true;
         }),
       ).subscribe(
-      (data: any) => {
+      (data: ITasks) => {
         this.tasks = data;
       },
       () => {

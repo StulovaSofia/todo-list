@@ -1,7 +1,7 @@
 <div class="profile">
   <h3 class="title">User</h3>
   <div *ngIf="isUserLoaded; else loader" class="info">
-    <img alt="" class="avatar" draggable="false" src="{{user.image}}">
+    <img alt="avatar" class="avatar" draggable="false" src="{{user.image}}">
     <p class="name">{{user.firstName}} {{user.lastName}}</p>
   </div>
   <ng-template #loader>

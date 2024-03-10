@@ -1,9 +1,11 @@
+@import "src/styles/variables";
+
 :host {
   height: 100vh;
   display: flex;
   align-items: center;
   @media (max-width: 470px) {
-    background-color: #ecfefb;
+    background-color: $light-blue;
   }
 }
 
@@ -19,7 +21,7 @@
 
 .login__inner {
   padding: 48px;
-  background-color: #ecfefb;
+  background-color: $light-blue;
   border-radius: 16px;
   @media (max-width: 470px) {
     padding: 25px;
@@ -66,26 +68,26 @@
 }
 
 .input {
-  border: 1px solid #848484;
+  border: 1px solid $grey;
   border-radius: 8px;
   padding: 11px 11px 11px 37px;
   font-size: 16px;
 }
 
 input::placeholder {
-  color: #848484;
+  color: $grey;
 }
 
 .input:focus {
   outline: none;
-  border: 1px solid #3feecf;
+  border: 1px solid $pri-blue;
 }
 
 .login__btn {
   font-size: 18px;
   padding: 21px 0;
   width: 100%;
-  background-color: #3feecf;
+  background-color: $pri-blue;
   transition: background-color 0.3s;
   border-radius: 8px;
   @media (max-width: 470px) {
@@ -95,16 +97,16 @@ input::placeholder {
 }
 
 .login__btn:hover {
-  background-color: #13DDB8;
+  background-color: $hover;
 }
 
 button:disabled {
-  background-color: #8FB1C1;
+  background-color: $disable;
   cursor: auto;
 }
 
 button:disabled:hover {
-  background-color: #8FB1C1;
+  background-color: $disable;
 }
 
 .login__input {
@@ -133,7 +135,7 @@ button:disabled:hover {
 
 .error {
   position: absolute;
-  color: #F20C1A;
+  color: $red;
   font-family: 'Inter Regular';
   font-size: 12px;
   line-height: 12px;
@@ -144,15 +146,15 @@ button:disabled:hover {
   position: relative;
 
   & input {
-    border-color: #F22D2D;
-    color: #F22D2D;
+    border-color: $red;
+    color: $red;
 
     &::placeholder {
-      color: #F22D2D;
+      color: $red;
     }
   }
 
   & label {
-    color: #F22D2D;
+    color: $red;
   }
 }

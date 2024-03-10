@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {TaskService} from "../../../service/task.service";
-import {IUser} from "../../../interfaces/user";
-import {UserService} from "../../../service/user.service";
-import {ITask} from "../../../interfaces/task";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {TaskService} from '../../../service/task.service';
+import {IUser} from '../../../interfaces/user';
+import {UserService} from '../../../service/user.service';
+import {ITask} from '../../../interfaces/task';
 
 @Component({
   selector: 'app-task-input',
@@ -28,6 +28,7 @@ export class TaskInputComponent {
   }
 
   addTask() {
+    this.taskForm.controls['todo'].setValue(this.taskForm.controls['todo'].value.trim());
     let form = {}
     for (const key in this.taskForm.controls) {
       form = {...form, [key]: this.taskForm.controls[key].value};

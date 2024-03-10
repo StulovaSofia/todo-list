@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 :host {
   display: flex;
   position: fixed;
@@ -35,19 +37,13 @@
   font-family: "Inter SemiBold";
   font-size: 14px;
   line-height: 21px;
-  color: #FFFFFF;
+  color: $white;
 }
 
 .notification__close {
-  width: 10px;
-  height: 10px;
-  content: "";
-  background-image: url("../../../../assets/img/icons/close.svg");
   background-color: transparent;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .notification__error {
-  background-color: #ff0000;
+  background-color: $red;
 }

@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {AuthApiService} from '../api/auth-api.service';
 import {StorageService} from './storage.service';
-import {ILoginForm} from "../interfaces/login";
-import {catchError, tap, throwError} from "rxjs";
+import {ILoginForm, ILoginResponse} from '../interfaces/login';
+import {catchError, tap, throwError} from 'rxjs';
 
 const API_TOKEN_KEY = 'API_TOKEN';
 const API_TOKEN_CREATE_TIME = 'API_TOKEN_CREATE_TIME';
@@ -62,7 +62,7 @@ export class AuthService {
   login(loginData: ILoginForm) {
     return this.authApiService.login(loginData)
       .pipe(
-        tap((resp: any) => {
+        tap((resp: ILoginResponse) => {
           this.storageService.saveItem(API_TOKEN_KEY, resp.token);
           this.updateTokenTTL();
         }),

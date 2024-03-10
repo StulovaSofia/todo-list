@@ -1,8 +1,9 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {API_SERVER} from "../utilities/api-server";
-import {ITask} from "../interfaces/task";
-import {StorageService} from "../service/storage.service";
+import {API_SERVER} from '../utilities/api-server';
+import {ITask, ITasks} from '../interfaces/task';
+import {StorageService} from '../service/storage.service';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,12 @@ export class TaskApiService {
 
   addTask(task: ITask) {
     return this.http.post(`${this.apiServer}/todos/add`, task,
-      {headers: new HttpHeaders({'Authorization': `Bearer ${this.storageService.readItem('API_TOKEN')}`})});
+      {headers: new HttpHeaders({'Authorization': `Bearer ${this.storageService.readItem('API_TOKEN')}`})}) as Observable<ITask>;
   }
 
   getTasks(userId: number) {
     return this.http.get(`${this.apiServer}/todos/user/${userId}`,
-      {headers: new HttpHeaders({'Authorization': `Bearer ${this.storageService.readItem('API_TOKEN')}`})});
+      {headers: new HttpHeaders({'Authorization': `Bearer ${this.storageService.readItem('API_TOKEN')}`})}) as Observable<ITasks>;
   }
 
   deleteTask(taskId: string) {

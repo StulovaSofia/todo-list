@@ -3,9 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../service/auth.service';
 import {ILoginForm} from '../../interfaces/login';
 import {Router} from '@angular/router';
-import {NotificationService} from "../../service/notification.service";
-
-const VALID = 'VALID';
+import {NotificationService} from '../../service/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -40,6 +38,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.inProgress = true;
+    Object.keys(this.loginForm.controls).forEach(key => {
+      this.loginForm.controls[key].setValue(this.loginForm.controls[key].value.trim());
+    });
     this.authService
       .login({
         ...this.loginForm.value,

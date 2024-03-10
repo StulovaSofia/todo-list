@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ITask} from '../../../interfaces/task';
-import {TaskService} from "../../../service/task.service";
-import {NotificationService} from "../../../service/notification.service";
+import {TaskService} from '../../../service/task.service';
+import {NotificationService} from '../../../service/notification.service';
 
 @Component({
   selector: 'app-task-item',

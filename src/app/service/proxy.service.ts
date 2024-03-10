@@ -3,7 +3,7 @@ import {catchError, Observable, of, Subject, tap} from 'rxjs';
 import {TaskApiService} from '../api/task-api.service';
 import {ITask, ITasks} from '../interfaces/task';
 import {NotificationService} from './notification.service';
-import {StorageService} from "./storage.service";
+import {StorageService} from './storage.service';
 
 enum TaskStatus {
   'statusChanged',
@@ -39,7 +39,7 @@ export class ProxyService {
     }
   }
 
-  getTasks(userId: number): Observable<Object> {
+  getTasks(userId: number): Observable<ITasks> {
     if (!this.isOffline) {
       return this.taskApiService.getTasks(userId).pipe(
         tap((tasks) => this.saveToLocal(this.tasksKey, tasks as ITasks)),

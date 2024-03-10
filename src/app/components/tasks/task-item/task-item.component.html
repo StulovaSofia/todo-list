@@ -1,4 +1,4 @@
-<div class="task">
+<div [ngClass]="{'input__edit': isEdit}" class="task">
   <p *ngIf="!isEdit; else input" [ngClass]="{'complete': task.completed}" class="title">
     {{task.todo}}
   </p>
@@ -6,24 +6,24 @@
     <input [(ngModel)]="task.todo" class="title" type="text">
   </ng-template>
   <div class="actions">
-    <p (click)="isEdit = true" *ngIf="!isEdit; else save" class="edit">
-      <img alt="" draggable="false" src="assets/img/icons/pencil.svg">
-    </p>
+    <button (click)="isEdit = true" *ngIf="!isEdit; else save" class="edit">
+      <img alt="edit" draggable="false" src="assets/img/icons/pencil.svg">
+    </button>
     <ng-template #save>
-      <p (click)="changeTitleTask()" class="edit">
-        <img alt="" draggable="false" src="assets/img/icons/pencil.svg">
-      </p>
+      <button (click)="changeTitleTask()" class="edit">
+        <img alt="save" draggable="false" src="assets/img/icons/pencil.svg">
+      </button>
     </ng-template>
-    <p (click)="changeStatus()" *ngIf="!task.completed; else cancel" class="completed">
-      <img alt="" draggable="false" src="assets/img/icons/check.svg">
-    </p>
+    <button (click)="changeStatus()" *ngIf="!task.completed; else cancel" class="completed">
+      <img alt="complete" draggable="false" src="assets/img/icons/check.svg">
+    </button>
     <ng-template #cancel>
-      <p (click)="changeStatus()" class="completed">
-        <img alt="" draggable="false" src="assets/img/icons/cancel.svg">
-      </p>
+      <button (click)="changeStatus()" class="completed">
+        <img alt="cancel" draggable="false" src="assets/img/icons/cancel.svg">
+      </button>
     </ng-template>
-    <p (click)="deleteTask()" class="delete">
-      <img alt="" draggable="false" src="assets/img/icons/delete.svg">
-    </p>
+    <button (click)="deleteTask()" class="delete">
+      <img alt="delete" draggable="false" src="assets/img/icons/delete.svg">
+    </button>
   </div>
 </div>

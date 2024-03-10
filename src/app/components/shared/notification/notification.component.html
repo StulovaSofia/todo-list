@@ -2,5 +2,7 @@
   [ngClass]="{ notification__error: notificationService.isError }"
   class="notification__container">
   <p class="notification__text overflow-control">{{ notificationService.message }}</p>
-  <button (click)="notificationService.hide()" class="notification__close"></button>
+  <button (click)="notificationService.hide()" class="notification__close">
+    <img alt="close" src="assets/img/icons/close.svg">
+  </button>
 </div>

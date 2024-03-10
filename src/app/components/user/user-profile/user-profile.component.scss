@@ -1,7 +1,9 @@
+@import "src/styles/variables";
+
 .profile {
   text-align: center;
   font-size: 24px;
-  color: #000;
+  color: $black;
   font-family: 'Inter Bold';
   @media (max-width: 770px) {
     margin-bottom: 20px;
@@ -15,7 +17,7 @@
   gap: 12px;
   padding: 28px 39px;
   border-radius: 16px;
-  background: #fff;
+  background: $white;
   @media (max-width: 770px) {
     padding: 20px;
     max-width: 262px;
@@ -32,8 +34,8 @@
 .avatar {
   max-width: 102px;
   border-radius: 50%;
-  background: #fff;
-  border: 1px #000 solid;
+  background: $white;
+  border: 1px $black solid;
   @media (max-width: 770px) {
     max-width: 90px;
   }
@@ -42,7 +44,7 @@
 .name {
   font-size: 18px;
   font-family: "Inter SemiBold";
-  color: #000;
+  color: $black;
   text-align: start;
   line-height: 33px;
 }
@@ -65,10 +67,10 @@
   width: 64px;
   height: 64px;
   margin: 8px;
-  border: 8px solid #3feecf;
+  border: 8px solid $pri-blue;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #3feecf transparent transparent transparent;
+  border-color: $pri-blue transparent transparent transparent;
 }
 
 .lds-ring div:nth-child(1) {

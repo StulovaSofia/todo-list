@@ -6,19 +6,14 @@
       </h2>
       <div class="buttons">
         <button (click)="setOffline(true)" class="btn btn-primary">
-          <img *ngIf="this.proxyService.offline; else offlineOff" alt="" draggable="false"
-               src="assets/img/icons/offline-on.svg">
-          <ng-template #offlineOff>
-            <img alt="" draggable="false" src="assets/img/icons/offline-off.svg">
-          </ng-template>
+          <img alt="offline mode" class="img"
+               draggable="false"
+               src="assets/img/icons/{{this.proxyService.offline ? 'offline-on' : 'offline-off'}}.svg">
         </button>
         <button (click)="setOffline(false)" class="btn btn-primary">
-          <span class=""></span>
-          <img *ngIf="!this.proxyService.offline; else onlineOff" alt="" draggable="false"
-               src="assets/img/icons/online-on.svg">
-          <ng-template #onlineOff>
-            <img alt="" draggable="false" src="assets/img/icons/online-off.svg">
-          </ng-template>
+          <img alt="online mode" class="img"
+               draggable="false"
+               src="assets/img/icons/{{this.proxyService.offline ? 'online-off' : 'online-on'}}.svg">
         </button>
       </div>
     </div>
@@ -28,10 +23,10 @@
       </h2>
       <div class="buttons">
         <button (click)="sortingById()" class="btn btn-primary">
-          <img alt="" draggable="false" src="assets/img/icons/sort-numeric-descending.svg">
+          <img alt="sort by id" draggable="false" src="assets/img/icons/sort-numeric-descending.svg">
         </button>
         <button (click)="sortingByCompleted()" class="btn btn-primary">
-          <img alt="" draggable="false" src="assets/img/icons/sort-numeric-ascending.svg">
+          <img alt="sort by complete" draggable="false" src="assets/img/icons/sort-numeric-ascending.svg">
         </button>
       </div>
     </div>

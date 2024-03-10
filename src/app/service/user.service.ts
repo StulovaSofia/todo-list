@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {UserApiService} from '../api/user-api.service';
 import {IUser} from '../interfaces/user';
-import {BehaviorSubject, finalize} from "rxjs";
-import {NotificationService} from "./notification.service";
+import {BehaviorSubject, finalize} from 'rxjs';
+import {NotificationService} from './notification.service';
 
 @Injectable({
   providedIn: 'root'

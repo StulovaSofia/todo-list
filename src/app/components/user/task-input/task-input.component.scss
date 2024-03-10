@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 .form {
   display: flex;
   flex-direction: column;
@@ -12,7 +14,7 @@
 }
 
 .input {
-  border: 1px solid #848484;
+  border: 1px solid $grey;
   border-radius: 12px;
   padding: 16px;
   width: 100%;
@@ -24,14 +26,14 @@
 
 .input:focus {
   outline: none;
-  border: 1px solid #3feecf;
+  border: 1px solid $pri-blue;
 }
 
 .btn {
-  background-color: #3feecf;
+  background-color: $pri-blue;
   border: none;
   border-radius: 12px;
-  color: #000;
+  color: $black;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -44,7 +46,7 @@
 }
 
 .btn:hover {
-  background-color: #13DDB8;
+  background-color: $hover;
 }
 
 .btn:before {
@@ -58,10 +60,10 @@
 }
 
 button:disabled {
-  background-color: #8FB1C1;
+  background-color: $disable;
   cursor: auto;
 }
 
 button:disabled:hover {
-  background-color: #8FB1C1;
+  background-color: $disable;
 }

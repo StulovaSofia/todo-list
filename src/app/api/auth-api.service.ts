@@ -1,7 +1,8 @@
 import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
-import {ILoginForm} from '../interfaces/login';
+import {ILoginForm, ILoginResponse} from '../interfaces/login';
 import {API_SERVER} from '../utilities/api-server';
+import {Observable} from 'rxjs';
 
 // Service sends request to API for user login.
 @Injectable({
@@ -16,6 +17,6 @@ export class AuthApiService {
   }
 
   login(loginData: ILoginForm) {
-    return this.httpClient.post(`${this.apiServer}/auth/login`, loginData);
+    return this.httpClient.post(`${this.apiServer}/auth/login`, loginData) as Observable<ILoginResponse>;
   }
 }

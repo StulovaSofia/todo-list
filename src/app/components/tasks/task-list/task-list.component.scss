@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 :host {
   max-width: 500px;
   width: 100%;
@@ -10,7 +12,7 @@
 
 .title {
   font-size: 40px;
-  color: #000;
+  color: $black;
   font-family: "Inter Bold";
   text-align: center;
   margin-top: 57px;
@@ -44,7 +46,7 @@ ol {
 }
 
 li::marker {
-  color: #000;
+  color: $black;
   font-size: 16px;
   font-family: "Inter Regular";
 }
